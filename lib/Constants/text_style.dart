@@ -41,7 +41,7 @@ class FontTextStyle {
 
   static TextStyle kWhite22W400 = TextStyle(
     color: PickColor.kWhite,
-    fontSize: 17.sp,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w400,
   );
 }
