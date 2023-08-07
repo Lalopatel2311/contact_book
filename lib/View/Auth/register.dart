@@ -263,7 +263,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   RegisterVariable.passwordController.text,
                             );
 
-                            user.collection('User').add({
+                            user
+                                .collection('${userCredential.user!.email}')
+                                .add({
                               "name": RegisterVariable.nameController.text,
                               "email": RegisterVariable.emailController.text,
                               "password":

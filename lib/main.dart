@@ -7,6 +7,8 @@ import 'package:raj_contact_book/View/Auth/log_in.dart';
 import 'package:raj_contact_book/View/Auth/register.dart';
 import 'package:raj_contact_book/View/Auth/splash.dart';
 
+import 'View/Home/all_contact.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: "${GoogleFonts.josefinSans()}"),
-          home: LogInScreen(),
+          home: RegisterScreen(),
         );
       },
     );
