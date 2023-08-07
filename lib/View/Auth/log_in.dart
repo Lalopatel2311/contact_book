@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +24,7 @@ class _LogInScreenState extends State<LogInScreen> {
         clipBehavior: Clip.none,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 75),
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,17 +34,17 @@ class _LogInScreenState extends State<LogInScreen> {
                   style: FontTextStyle.kWhite30W500,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 Text(
                   "Empowering Your Call Defense!",
                   style: TextStyle(
                     color: Colors.grey.shade600,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -50,7 +52,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     controller: LoginVariable.emailController,
                     title: "Email"),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.visiblePassword,
@@ -71,27 +73,27 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 15.h,
                 ),
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      print(
+                      log(
                         "Log In Successfully!...",
                       );
                     },
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      fixedSize: Size(360.w, 38.h),
+                      side: BorderSide(
+                        color: PickColor.k7B7B7B,
+                        width: 2.50.w,
+                      ),
+                    ),
                     child: Text(
                       "Log in",
                       style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      fixedSize: const Size(360, 45),
-                      side: const BorderSide(
-                        color: PickColor.k7B7B7B,
-                        width: 1.50,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
@@ -101,17 +103,19 @@ class _LogInScreenState extends State<LogInScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don't have an account?",
-                        style: TextStyle(color: PickColor.kWhite),
+                        style: TextStyle(
+                          color: PickColor.kWhite,
+                        ),
                       ),
                       TextButton(
                         onPressed: () {},
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
-                            color: Color(0xff5c49e0),
-                            fontSize: 15,
+                            color: const Color(0xff5c49e0),
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -121,6 +125,14 @@ class _LogInScreenState extends State<LogInScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    fixedSize: Size(360.w, 38.h),
+                    side: BorderSide(
+                      color: PickColor.k7B7B7B,
+                      width: 2.50.sp,
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -128,18 +140,10 @@ class _LogInScreenState extends State<LogInScreen> {
                         "assets/images/google logo.png",
                         scale: 80,
                       ),
-                      Text(
+                      const Text(
                         " Login with Google",
                       ),
                     ],
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    fixedSize: const Size(360, 45),
-                    side: const BorderSide(
-                      color: PickColor.k7B7B7B,
-                      width: 1.50,
-                    ),
                   ),
                 ),
               ],

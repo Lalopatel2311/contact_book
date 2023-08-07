@@ -31,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       backgroundColor: PickColor.kBlack,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 75.h),
           child: Form(
             key: formKey,
             child: Column(
@@ -51,11 +51,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   "Let us know about yourself",
                   style: TextStyle(
                     color: Colors.grey.shade600,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                   ),
                 ),
                 SizedBox(
-                  height: 20.sp,
+                  height: 20.h,
                 ),
                 CommonTextFormField(
                   keyboardType: TextInputType.name,
@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   title: "Name",
                 ),
                 SizedBox(
-                  height: 10.sp,
+                  height: 10.h,
                 ),
                 CommonTextFormField(
                   keyboardType: TextInputType.emailAddress,
@@ -73,7 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   title: "Email",
                 ),
                 SizedBox(
-                  height: 10.sp,
+                  height: 10.h,
                 ),
                 CommonTextFormField(
                   keyboardType: TextInputType.number,
@@ -82,7 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   title: "Password",
                 ),
                 SizedBox(
-                  height: 10.sp,
+                  height: 10.h,
                 ),
                 CommonTextFormField(
                   keyboardType: TextInputType.number,
@@ -90,84 +90,79 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   controller: RegisterVariable.repeatPasswordController,
                   title: "Reenter Password",
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 Visibility(
                   visible: !isLoading,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 100.w,
-                    ),
-                    child: OutlinedButton(
-                      onPressed: () async {
-                        setState(() {
-                          isLoading =
-                              true; // Show the loading indicator when the button is pressed.
-                        });
-                        if (formKey.currentState!.validate()) {
-                          if (RegisterVariable.passwordController.text ==
-                              RegisterVariable.repeatPasswordController.text) {
-                            try {
-                              UserCredential userCredential =
-                                  await auth.createUserWithEmailAndPassword(
-                                email: RegisterVariable.emailController.text,
-                                password:
-                                    RegisterVariable.passwordController.text,
-                              );
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      setState(() {
+                        isLoading =
+                            true; // Show the loading indicator when the button is pressed.
+                      });
+                      if (formKey.currentState!.validate()) {
+                        if (RegisterVariable.passwordController.text ==
+                            RegisterVariable.repeatPasswordController.text) {
+                          try {
+                            UserCredential userCredential =
+                                await auth.createUserWithEmailAndPassword(
+                              email: RegisterVariable.emailController.text,
+                              password:
+                                  RegisterVariable.passwordController.text,
+                            );
 
-                              // Save data to Firebase
-                              user
-                                  .collection('${userCredential.user!.email}')
-                                  .add({
-                                "name": RegisterVariable.nameController.text,
-                                "email": RegisterVariable.emailController.text,
-                                "password":
-                                    RegisterVariable.passwordController.text,
-                                "re password":
-                                    RegisterVariable.passwordController.text,
-                              });
+                            // Save data to Firebase
+                            user
+                                .collection('${userCredential.user!.email}')
+                                .add({
+                              "name": RegisterVariable.nameController.text,
+                              "email": RegisterVariable.emailController.text,
+                              "password":
+                                  RegisterVariable.passwordController.text,
+                              "re password":
+                                  RegisterVariable.passwordController.text,
+                            });
 
-                              Get.offAll(const LogInScreen());
-                            } on FirebaseAuthException catch (error) {
-                              log('ERROR---------->>>>>>>>>>${error.code}');
-                              showToast("${error.message}");
-                            } finally {
-                              setState(() {
-                                isLoading =
-                                    false; // Hide the loading indicator when the task is done.
-                              });
-                            }
-                          } else {
-                            showToast("Password doesn't match");
+                            Get.offAll(const LogInScreen());
+                          } on FirebaseAuthException catch (error) {
+                            log('ERROR---------->>>>>>>>>>${error.code}');
+                            showToast("${error.message}");
+                          } finally {
                             setState(() {
                               isLoading =
                                   false; // Hide the loading indicator when the task is done.
                             });
                           }
                         } else {
+                          showToast("Password doesn't match");
                           setState(() {
                             isLoading =
                                 false; // Hide the loading indicator when the task is done.
                           });
                         }
-                      },
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(360, 45),
-                        side: const BorderSide(
-                          color: PickColor.k7B7B7B,
-                          width: 1.50,
-                        ),
+                      } else {
+                        setState(() {
+                          isLoading =
+                              false; // Hide the loading indicator when the task is done.
+                        });
+                      }
+                    },
+                    style: OutlinedButton.styleFrom(
+                      fixedSize: Size(360.w, 38.h),
+                      side: const BorderSide(
+                        color: PickColor.k7B7B7B,
+                        width: 2.50,
                       ),
-                      child: const Text(
-                        "Next",
-                        style: TextStyle(
-                          color: PickColor.kWhite,
-                          fontSize: 18,
-                        ),
+                    ),
+                    child: const Text(
+                      "Next",
+                      style: TextStyle(
+                        color: PickColor.kWhite,
+                        fontSize: 18,
                       ),
                     ),
                   ),
