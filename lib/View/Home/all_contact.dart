@@ -20,10 +20,13 @@ class _AllContactScreenState extends State<AllContactScreen> {
 
     /// final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: PickColor.kBlack,
       appBar: AppBar(
-        backgroundColor: PickColor.kWhite,
-        title: const Text("Contacts"),
-        titleTextStyle: FontTextStyle.kBlack20W500,
+        backgroundColor: PickColor.kBlack,
+        title: const Text(
+          "Contacts",
+        ),
+        titleTextStyle: FontTextStyle.kWhite30W500,
         actions: [
           IconButton(
             onPressed: () {},
@@ -81,9 +84,13 @@ class _AllContactScreenState extends State<AllContactScreen> {
                     ),
                   ),
                   title: const Text("Raj Malaviya"),
-                  titleTextStyle: FontTextStyle.kBlack16W500,
-                  subtitle: const Text("+91 757402764"),
-                  subtitleTextStyle: FontTextStyle.k8B8B8B14W500,
+                  titleTextStyle: TextStyle(
+                    fontFamily: "JosefinSans",
+                    color: PickColor.kWhite,
+                  ),
+                  subtitle: Text("+91 757402764",
+                      style: TextStyle(color: Colors.amber.shade100)),
+                  subtitleTextStyle: FontTextStyle.kWhite22W400,
                   trailing: IconButton(
                     onPressed: () {
                       log('IconButton');

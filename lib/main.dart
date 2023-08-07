@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:raj_contact_book/View/Auth/log_in.dart';
 import 'package:raj_contact_book/View/Auth/register.dart';
 import 'package:raj_contact_book/View/Auth/splash.dart';
+import 'package:raj_contact_book/View/Home/all_contact.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(fontFamily: "${GoogleFonts.josefinSans()}"),
-          home: LogInScreen(),
+          theme: ThemeData(fontFamily: "JosefinSans"),
+          home: AllContactScreen(),
         );
       },
     );

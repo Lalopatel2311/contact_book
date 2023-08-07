@@ -34,7 +34,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
         Text(
           widget.title,
           style: TextStyle(
-            color: Colors.black,
+            color: PickColor.kWhite,
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
@@ -42,7 +42,6 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: TextFormField(
-            style: GoogleFonts.josefinSans(),
             keyboardType: widget.keyboardType,
             // validator: widget.validator,
             validator: (value) {
