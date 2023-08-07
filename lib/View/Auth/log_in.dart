@@ -20,122 +20,131 @@ class _LogInScreenState extends State<LogInScreen> {
       backgroundColor: PickColor.kBlack,
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 150,
-                left: 30,
-              ),
-              child: Text("LOGIN",
-                  style: GoogleFonts.josefinSans(
-                    textStyle: TextStyle(
-                      fontSize: 35.sp,
-                      color: PickColor.kWhite,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )),
-            ),
-            CommonTextFormField(
-                keyboardType: TextInputType.emailAddress,
-                hintText: "Enter Your Email",
-                controller: LoginVariable.emailController,
-                title: "Email"),
-            CommonTextFormField(
-                keyboardType: TextInputType.visiblePassword,
-                hintText: "Enter Your Password",
-                controller: LoginVariable.passwordController,
-                title: "Email"),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Forgot password?",
-                style: GoogleFonts.josefinSans(
-                    textStyle: FontTextStyle.kWhite22W400),
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  print(
-                    "Log In Successfully!...",
-                  );
-                },
-                child: Text(
-                  "Log in",
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 75),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "SIGN IN",
+                  style: FontTextStyle.kWhite30W500,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Empowering Your Call Defense!",
                   style: TextStyle(
-                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                    fontSize: 18,
                   ),
                 ),
-                style: ElevatedButton.styleFrom(
-                  primary: Color(0xff5c49e0),
-                  fixedSize: Size(330, 45),
+                SizedBox(
+                  height: 50,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 90,
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    "Don't have an account?",
+                CommonTextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    hintText: "Enter Your Email",
+                    controller: LoginVariable.emailController,
+                    title: "Email"),
+                SizedBox(
+                  height: 10,
+                ),
+                CommonTextFormField(
+                    keyboardType: TextInputType.visiblePassword,
+                    hintText: "Enter Your Password",
+                    controller: LoginVariable.passwordController,
+                    title: "Password"),
+                TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Forgot password ?",
+                        style: GoogleFonts.josefinSans(
+                            textStyle: FontTextStyle.kWhite22W400),
+                      ),
+                    ],
                   ),
-                  TextButton(
-                    onPressed: () {},
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print(
+                        "Log In Successfully!...",
+                      );
+                    },
                     child: Text(
-                      "Sign Up",
+                      "Log in",
                       style: TextStyle(
-                        color: Color(0xff5c49e0),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                       ),
                     ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/google logo.png",
-                      scale: 80,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 68,
-                      ),
-                      child: Text(
-                        "Or Login with Google",
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      fixedSize: const Size(360, 45),
+                      side: const BorderSide(
+                        color: PickColor.k7B7B7B,
+                        width: 1.50,
                       ),
                     ),
-                  ],
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Color(0xffea4235),
-                  fixedSize: Size(
-                    330,
-                    45,
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an account?",
+                        style: TextStyle(color: PickColor.kWhite),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            color: Color(0xff5c49e0),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/images/google logo.png",
+                        scale: 80,
+                      ),
+                      Text(
+                        " Login with Google",
+                      ),
+                    ],
+                  ),
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    fixedSize: const Size(360, 45),
+                    side: const BorderSide(
+                      color: PickColor.k7B7B7B,
+                      width: 1.50,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

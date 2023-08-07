@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(fontFamily: "${GoogleFonts.josefinSans()}"),
-          home: LogInScreen(),
+          theme: ThemeData(fontFamily: "JosefinSans"),
+          home: RegisterScreen(),
         );
       },
     );

@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       backgroundColor: PickColor.kBlack,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 75),
           child: Form(
             key: formKey,
             child: Column(
@@ -58,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    hintText: "enter your name",
+                    hintText: "Enter your name",
                     controller: RegisterVariable.nameController,
                     title: "Name"),
                 SizedBox(
@@ -66,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    hintText: "enter your email address",
+                    hintText: "Enter your email address",
                     controller: RegisterVariable.emailController,
                     title: "Email"),
                 SizedBox(
@@ -74,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.number,
-                    hintText: "enter your password",
+                    hintText: "Enter your password",
                     controller: RegisterVariable.passwordController,
                     title: "Password"),
                 SizedBox(
@@ -82,9 +82,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CommonTextFormField(
                     keyboardType: TextInputType.number,
-                    hintText: "Re enter your password",
+                    hintText: "Confirm your password",
                     controller: RegisterVariable.repeatPasswordController,
-                    title: "Reenter Password"),
+                    title: "Confirm Password"),
                 const SizedBox(
                   height: 20,
                 ),
