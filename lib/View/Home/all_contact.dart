@@ -84,10 +84,7 @@ class _AllContactScreenState extends State<AllContactScreen> {
                     ),
                   ),
                   title: const Text("Raj Malaviya"),
-                  titleTextStyle: TextStyle(
-                    fontFamily: "JosefinSans",
-                    color: PickColor.kWhite,
-                  ),
+                  titleTextStyle: FontTextStyle.kWhite22W400,
                   subtitle: Text("+91 757402764",
                       style: TextStyle(color: Colors.amber.shade100)),
                   subtitleTextStyle: FontTextStyle.kWhite22W400,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:raj_contact_book/Constants/color.dart';
 import 'package:raj_contact_book/Constants/image_path.dart';
 import 'package:raj_contact_book/Constants/text_style.dart';
@@ -46,15 +46,12 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Text(
               "CallBlocker",
-              style: GoogleFonts.josefinSans(
-                textStyle: FontTextStyle.kWhite30W500,
-              ),
+              style: FontTextStyle.kWhite30W500,
             ),
             SizedBox(height: height * 0.01),
             Text(
               "Ultimate Call Protection App",
-              style: GoogleFonts.josefinSans(
-                  textStyle: FontTextStyle.kWhite30W500, fontSize: 18.sp),
+              style: FontTextStyle.kWhite30W500,
             ),
           ],
         ),
