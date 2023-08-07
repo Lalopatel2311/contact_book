@@ -7,7 +7,11 @@ import 'package:raj_contact_book/Constants/text_style.dart';
 import 'package:raj_contact_book/View/Home/new_contact.dart';
 
 class AllContactScreen extends StatefulWidget {
-  const AllContactScreen({super.key});
+  const AllContactScreen({
+    super.key,
+    required this.userId,
+  });
+  final String userId;
 
   @override
   State<AllContactScreen> createState() => _AllContactScreenState();
@@ -16,9 +20,6 @@ class AllContactScreen extends StatefulWidget {
 class _AllContactScreenState extends State<AllContactScreen> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-
-    /// final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: PickColor.kBlack,
       appBar: AppBar(
@@ -61,7 +62,7 @@ class _AllContactScreenState extends State<AllContactScreen> {
           color: PickColor.kWhite,
         ),
       ),
-      body: 2 / 2 == 1
+      body: 2 / 2 == 0
           ? ListView.builder(
               itemCount: 1000,
               itemBuilder: (context, index) {
@@ -106,11 +107,14 @@ class _AllContactScreenState extends State<AllContactScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(ImagePath.emptyBox),
-                  SizedBox(height: height * 0.04),
+                  Image.asset(
+                    ImagePath.emptyBox,
+                    color: PickColor.kWhite,
+                  ),
+                  SizedBox(height: 40.h),
                   Text(
                     "You have no contacts yet",
-                    style: FontTextStyle.kBlackWithOpacity16W500,
+                    style: FontTextStyle.kWhite30W500,
                   ),
                 ],
               ),

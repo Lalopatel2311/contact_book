@@ -8,7 +8,7 @@ import 'package:raj_contact_book/Constants/color.dart';
 import 'package:raj_contact_book/Constants/text_style.dart';
 import 'package:raj_contact_book/Controller/variable.dart';
 import 'package:raj_contact_book/View/Auth/log_in.dart';
-import 'package:raj_contact_book/View/Widget/showToast.dart';
+import 'package:raj_contact_book/View/Widget/snack_bar.dart';
 import 'package:raj_contact_book/View/Widget/text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -130,7 +130,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Get.offAll(const LogInScreen());
                           } on FirebaseAuthException catch (error) {
                             log('ERROR---------->>>>>>>>>>${error.code}');
-                            showToast("${error.message}");
+                            showSnackBar("${error.message}");
                           } finally {
                             setState(() {
                               isLoading =
@@ -138,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             });
                           }
                         } else {
-                          showToast("Password doesn't match");
+                          showSnackBar("Password doesn't match");
                           setState(() {
                             isLoading =
                                 false; // Hide the loading indicator when the task is done.
