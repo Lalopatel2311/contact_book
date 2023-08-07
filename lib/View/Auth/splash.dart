@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:raj_contact_book/Constants/color.dart';
+import 'package:raj_contact_book/Constants/image_path.dart';
 import 'package:raj_contact_book/Constants/text_style.dart';
 import 'package:raj_contact_book/View/Home/all_contact.dart';
 
@@ -15,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 30000000000), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -32,19 +35,26 @@ class _SplashScreenState extends State<SplashScreen> {
     ///  final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: PickColor.kWarmBlue,
+      backgroundColor: PickColor.kBlack,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image(image: AssetImage(ImagePath.appLogo), height: 120.sp),
+            SizedBox(
+              height: 20.sp,
+            ),
             Text(
               "CallBlocker",
-              style: FontTextStyle.kWhite30W500,
+              style: GoogleFonts.josefinSans(
+                textStyle: FontTextStyle.kWhite30W500,
+              ),
             ),
             SizedBox(height: height * 0.01),
             Text(
               "Ultimate Call Protection App",
-              style: FontTextStyle.kWhite22W400,
+              style: GoogleFonts.josefinSans(
+                  textStyle: FontTextStyle.kWhite30W500, fontSize: 18.sp),
             ),
           ],
         ),

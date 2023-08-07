@@ -7,3 +7,8 @@ class RegisterVariable {
   static TextEditingController repeatPasswordController =
       TextEditingController();
 }
+
+class LoginVariable {
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController passwordController = TextEditingController();
+}
