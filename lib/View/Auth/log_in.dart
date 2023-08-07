@@ -20,122 +20,122 @@ class _LogInScreenState extends State<LogInScreen> {
       backgroundColor: PickColor.kBlack,
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 10,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 150,
+                left: 30,
               ),
-              SafeArea(
-                child: Text(
-                  "SIGN UP",
-                  style: FontTextStyle.kWhite30W500,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "Empowering Your Call Defense!",
-                style: TextStyle(
-                  color: Colors.grey.shade600,
-                  fontSize: 18,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              CommonTextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  hintText: "Enter Your Email",
-                  controller: LoginVariable.emailController,
-                  title: "Email"),
-              CommonTextFormField(
-                  keyboardType: TextInputType.visiblePassword,
-                  hintText: "Enter Your Password",
-                  controller: LoginVariable.passwordController,
-                  title: "Password"),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Forgot password?",
+              child: Text("LOGIN",
                   style: GoogleFonts.josefinSans(
-                      textStyle: FontTextStyle.kWhite22W400),
+                    textStyle: TextStyle(
+                      fontSize: 35.sp,
+                      color: PickColor.kWhite,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )),
+            ),
+            CommonTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                hintText: "Enter Your Email",
+                controller: LoginVariable.emailController,
+                title: "Email"),
+            CommonTextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                hintText: "Enter Your Password",
+                controller: LoginVariable.passwordController,
+                title: "Email"),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Forgot password?",
+                style: GoogleFonts.josefinSans(
+                    textStyle: FontTextStyle.kWhite22W400),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  print(
+                    "Log In Successfully!...",
+                  );
+                },
+                child: Text(
+                  "Log in",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xff5c49e0),
+                  fixedSize: Size(330, 45),
                 ),
               ),
-              SizedBox(
-                height: 15,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 90,
               ),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Log in",
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
+              child: Row(
+                children: [
+                  Text(
+                    "Don't have an account?",
                   ),
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    fixedSize: const Size(360, 45),
-                    side: const BorderSide(
-                      color: PickColor.k7B7B7B,
-                      width: 1.50,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have an account?",
-                      style: FontTextStyle.kWhite22W400,
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          color: Color(0xff5c49e0),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: Color(0xff5c49e0),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
-              ElevatedButton(
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: ElevatedButton(
                 onPressed: () {},
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Image.asset(
                       "assets/images/google logo.png",
                       scale: 80,
                     ),
-                    Text(
-                      "Login with Google",
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 68,
+                      ),
+                      child: Text(
+                        "Or Login with Google",
+                      ),
                     ),
                   ],
                 ),
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  fixedSize: const Size(360, 45),
-                  side: const BorderSide(
-                    color: PickColor.k7B7B7B,
-                    width: 1.50,
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xffea4235),
+                  fixedSize: Size(
+                    330,
+                    45,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
