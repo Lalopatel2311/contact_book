@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:raj_contact_book/Constants/color.dart';
+import 'package:raj_contact_book/Controller/variable.dart';
+import 'package:raj_contact_book/View/Widget/text_form_field.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -11,6 +16,7 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: PickColor.kBlack,
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
         child: Column(
@@ -22,60 +28,30 @@ class _LogInScreenState extends State<LogInScreen> {
                 top: 150,
                 left: 30,
               ),
-              child: Text(
-                "LOGIN",
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 30,
-                right: 30,
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xff5c49e0),
+              child: Text("LOGIN",
+                  style: GoogleFonts.josefinSans(
+                    textStyle: TextStyle(
+                      fontSize: 35.sp,
+                      color: PickColor.kWhite,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ),
-                ),
-              ),
+                  )),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 10,
-                left: 30,
-                right: 30,
-              ),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye_outlined,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 240,
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Forgot password?",
-                  style: TextStyle(
-                    color: Colors.grey,
-                  ),
-                ),
+            CommonTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                hintText: "Enter Your Email",
+                controller: LoginVariable.emailController,
+                title: "Email"),
+            CommonTextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                hintText: "Enter Your Password",
+                controller: LoginVariable.passwordController,
+                title: "Email"),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Forgot password?",
+                style: GoogleFonts.josefinSans(textStyle: T),
               ),
             ),
             SizedBox(

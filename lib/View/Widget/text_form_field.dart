@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:raj_contact_book/Constants/color.dart';
 
 class CommonTextFormField extends StatefulWidget {
@@ -41,6 +42,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: TextFormField(
+            style: GoogleFonts.josefinSans(),
             keyboardType: widget.keyboardType,
             // validator: widget.validator,
             validator: (value) {
