@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'package:raj_contact_book/View/Auth/register.dart';
+import 'package:raj_contact_book/View/Home/all_contact.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: "JosefinSans"),
-          home: const RegisterScreen(),
+          home: const AllContactScreen(),
         );
       },
     );
