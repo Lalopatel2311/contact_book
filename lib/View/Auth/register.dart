@@ -170,8 +170,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Visibility(
                   visible: isLoading,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Center(
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                    child: const Center(
                       child: CircularProgressIndicator(),
                     ),
                   ),
