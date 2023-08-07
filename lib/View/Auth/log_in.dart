@@ -103,7 +103,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Don't have an account?",
+                        "Don't have a account?",
                         style: TextStyle(
                           color: PickColor.kWhite,
                         ),
@@ -111,9 +111,9 @@ class _LogInScreenState extends State<LogInScreen> {
                       TextButton(
                         onPressed: () {},
                         child: Text(
-                          "Sign Up",
+                          "SIGN UP",
                           style: TextStyle(
-                            color: const Color(0xff5c49e0),
+                            color: PickColor.kOrange,
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
                           ),

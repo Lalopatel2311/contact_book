@@ -86,9 +86,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CommonTextFormField(
                   keyboardType: TextInputType.number,
-                  hintText: "Re-enter your password",
+                  hintText: "Confirm your password",
                   controller: RegisterVariable.repeatPasswordController,
-                  title: "Reenter Password",
+                  title: "Confirm Password",
                 ),
                 SizedBox(
                   height: 20.h,
@@ -174,6 +174,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Center(
                       child: CircularProgressIndicator(),
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Already have an account?",
+                        style: TextStyle(
+                          color: PickColor.kWhite,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "SIGN IN",
+                          style: TextStyle(
+                            color: PickColor.kOrange,
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ],

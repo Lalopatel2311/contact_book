@@ -12,4 +12,5 @@ class PickColor {
   static const Color k7B7B7B = Color(0xff7B7B7B);
   static const Color k8B8B8B = Color(0xff8B8B8B);
   static const Color k323232 = Color(0xff323232);
+  static const Color kOrange = Colors.orange;
 }
