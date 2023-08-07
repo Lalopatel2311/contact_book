@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:raj_contact_book/Constants/color.dart';
+import 'package:raj_contact_book/Constants/text_style.dart';
 import 'package:raj_contact_book/Controller/variable.dart';
 import 'package:raj_contact_book/View/Widget/text_form_field.dart';
 
@@ -51,7 +52,8 @@ class _LogInScreenState extends State<LogInScreen> {
               onPressed: () {},
               child: Text(
                 "Forgot password?",
-                style: GoogleFonts.josefinSans(textStyle: T),
+                style: GoogleFonts.josefinSans(
+                    textStyle: FontTextStyle.kWhite22W400),
               ),
             ),
             SizedBox(
