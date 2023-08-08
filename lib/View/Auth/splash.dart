@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'package:raj_contact_book/Constants/color.dart';
 import 'package:raj_contact_book/Constants/image_path.dart';
 import 'package:raj_contact_book/Constants/text_style.dart';
 import 'package:raj_contact_book/View/Auth/log_in.dart';
+import 'package:raj_contact_book/View/Home/all_contact.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,26 +17,23 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final box = GetStorage();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const LogInScreen(),
-        ),
+      Get.offAll(
+        box.read('userId') == null
+            ? const LogInScreen()
+            : AllContactScreen(userId: box.read('userId')),
       );
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-
-    ///  final width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: PickColor.kBlack,
       body: Center(
@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
               "CallBlocker",
               style: FontTextStyle.kWhite30W500,
             ),
-            SizedBox(height: height * 0.01),
+            SizedBox(height: 10.h),
             Text(
               "Ultimate Call Protection App",
               style: FontTextStyle.kWhite30W500,
