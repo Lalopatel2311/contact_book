@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:raj_contact_book/View/Auth/log_in.dart';
+import 'package:raj_contact_book/View/Auth/forgot.dart';
+import 'package:raj_contact_book/View/Home/all_contact.dart';
+import 'package:raj_contact_book/View/Home/new_contact.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: "JosefinSans"),
-          home: const LogInScreen(),
+          home: const NewContactScreen(),
         );
       },
     );

@@ -12,3 +12,16 @@ class LoginVariable {
   static TextEditingController emailController = TextEditingController();
   static TextEditingController passwordController = TextEditingController();
 }
+
+class ForgotPasswordVariable {
+  static TextEditingController emailController = TextEditingController();
+  static TextEditingController newPasswordController = TextEditingController();
+  static TextEditingController newConfirmPasswordController =
+      TextEditingController();
+}
+
+class AddContactVariable {
+  static TextEditingController firstnameController = TextEditingController();
+  static TextEditingController lastnameController = TextEditingController();
+  static TextEditingController numberController = TextEditingController();
+}

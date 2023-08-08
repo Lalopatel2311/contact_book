@@ -11,10 +11,13 @@ class CommonTextFormField extends StatefulWidget {
     // required this.validator,
     this.suffixIcon,
     required this.title,
+    this.prefixIcon,
   }) : super(key: key);
 
   final TextInputType keyboardType;
   final String hintText;
+  // ignore: prefer_typing_uninitialized_variables
+  final prefixIcon;
   final TextEditingController controller;
   // final FormFieldValidator validator;
   final Widget? suffixIcon;
@@ -32,7 +35,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
       children: [
         Text(
           widget.title,
-          style: TextStyle(
+          style: const TextStyle(
             color: PickColor.kWhite,
             fontSize: 20,
             fontWeight: FontWeight.w500,
@@ -49,13 +52,15 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
               }
               return null;
             },
+
             controller: widget.controller,
             cursorColor: PickColor.kBlack,
             decoration: InputDecoration(
               // constraints: BoxConstraints(maxWidth: 388.w, minHeight: 56.h),
               hintText: widget.hintText,
-              hintStyle: TextStyle(),
+              hintStyle: const TextStyle(),
               filled: true,
+              prefixIcon: widget.prefixIcon,
               fillColor: const Color(0xffF7F7F7),
               suffixIcon: widget.suffixIcon,
               focusedBorder: OutlineInputBorder(

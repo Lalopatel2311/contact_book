@@ -9,9 +9,9 @@ import 'package:raj_contact_book/View/Home/new_contact.dart';
 class AllContactScreen extends StatefulWidget {
   const AllContactScreen({
     super.key,
-    required this.userId,
+    this.userId,
   });
-  final String userId;
+  final String? userId;
 
   @override
   State<AllContactScreen> createState() => _AllContactScreenState();

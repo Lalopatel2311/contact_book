@@ -17,44 +17,75 @@ class _ForgotScreenState extends State<ForgotScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: PickColor.kBlack,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SafeArea(
-            child: Text(
-              "FORGOT PASSWORD",
-              style: FontTextStyle.kWhite30W500,
-            ),
+      body: Padding(
+        padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 75.h),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SafeArea(
+                child: Text(
+                  "FORGOT PASSWORD",
+                  style: FontTextStyle.kWhite30W500,
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text(
+                "Unlock Your World: Rediscover Your Password!",
+                style: FontTextStyle.k8B8B8B14W500.copyWith(fontSize: 15.sp),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CommonTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                hintText: "Enter your email address",
+                controller: ForgotPasswordVariable.emailController,
+                title: "Email",
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              CommonTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                hintText: "Enter New Password",
+                controller: ForgotPasswordVariable.newPasswordController,
+                title: "New Password",
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              CommonTextFormField(
+                keyboardType: TextInputType.emailAddress,
+                hintText: "Enter Confirm Password",
+                controller: ForgotPasswordVariable.newConfirmPasswordController,
+                title: "Confirm Password",
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  fixedSize: Size(400.w, 50.h),
+                  side: BorderSide(
+                    color: PickColor.k7B7B7B,
+                    width: 2.50.sp,
+                  ),
+                ),
+                child: Text(
+                  "login your account with a new password",
+                  style: FontTextStyle.kWhite22W400.copyWith(
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Text(
-            "Unlock Your World: Rediscover Your Password!",
-            style: FontTextStyle.k8B8B8B14W500.copyWith(fontSize: 18.sp),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          CommonTextFormField(
-            keyboardType: TextInputType.emailAddress,
-            hintText: "Enter your email address",
-            controller: RegisterVariable.emailController,
-            title: "Email",
-          ),
-          CommonTextFormField(
-            keyboardType: TextInputType.emailAddress,
-            hintText: "Enter New Password",
-            controller: RegisterVariable.emailController,
-            title: "New Password",
-          ),
-          CommonTextFormField(
-            keyboardType: TextInputType.emailAddress,
-            hintText: "Enter Confirm Password",
-            controller: RegisterVariable.emailController,
-            title: "Confirm Password",
-          ),
-        ],
+        ),
       ),
     );
   }

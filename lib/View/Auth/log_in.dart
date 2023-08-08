@@ -140,7 +140,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ),
                     child: isLoading
-                        ? CircularProgressIndicator()
+                        ? const CircularProgressIndicator()
                         : Text(
                             "Log in",
                             style: TextStyle(
@@ -148,56 +148,6 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                           ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Don't have a account?",
-                        style: TextStyle(
-                          color: PickColor.kWhite,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "SIGN UP",
-                          style: TextStyle(
-                            color: PickColor.kOrange,
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    fixedSize: Size(360.w, 38.h),
-                    side: BorderSide(
-                      color: PickColor.k7B7B7B,
-                      width: 2.50.sp,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/images/google logo.png",
-                        scale: 80,
-                      ),
-                      const Text(
-                        " Login with Google",
-                      ),
-                    ],
-                  ),
-                ),
-              ],
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Row(

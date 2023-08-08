@@ -41,6 +41,7 @@ dependencies:
   cloud_firestore: ^4.8.4
   get_storage: ^2.1.1
   get: ^4.6.5
+  country_picker: ^2.0.19
 
 dev_dependencies:
   flutter_test:
